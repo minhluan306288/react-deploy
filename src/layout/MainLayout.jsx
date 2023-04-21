@@ -11,20 +11,20 @@ export default function MainLayout(){
    const navigate = useNavigate()
    console.log('pathname', pathname);
 
-   useLayoutEffect(() => {
+   // useLayoutEffect(() => {
 
-      const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
-         setIsSignedIn(!!user);
-         console.log('user', user);
-         console.log('user', await user?.getIdToken());
-         if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
-       });
-       return () => unregisterAuthObserver();
+   //    const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
+   //       setIsSignedIn(!!user);
+   //       console.log('user', user);
+   //       console.log('user', await user?.getIdToken());
+   //       if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
+   //     });
+   //     return () => unregisterAuthObserver();
 
-      // if(pathname !== '/sign-in' && pathname !== '/sign-up'){
+   //    // if(pathname !== '/sign-in' && pathname !== '/sign-up'){
          
-      // }
-    },[pathname]); 
+   //    // }
+   //  },[pathname]); 
 
 
 
@@ -35,7 +35,8 @@ export default function MainLayout(){
          </header>
          <main>
             <div className="mx-4">
-               {(isSignedIn || pathname ==='/sign-up' || pathname ==='/sign-in' ) && <Outlet />}
+               {/* {(isSignedIn || pathname ==='/sign-up' || pathname ==='/sign-in' ) && <Outlet />} */}
+               <Outlet />
             </div>
          </main>
       
