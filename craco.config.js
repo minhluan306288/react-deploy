@@ -12,6 +12,8 @@ module.exports = {
          '@Layout': path.resolve(__dirname, 'src/layout'),
          '@Styles': path.resolve(__dirname, 'src/styles'),
          '@Router': path.resolve(__dirname, 'src/router'),
+         '@Observer': path.resolve(__dirname, 'src/observer'),
+         '@Constants': path.resolve(__dirname, 'src/constants'),
       },
    },
    plugins: [{ 
