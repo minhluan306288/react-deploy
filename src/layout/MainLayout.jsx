@@ -10,6 +10,7 @@ export default function MainLayout(){
    const {pathname} = useResolvedPath()
    const navigate = useNavigate()
    console.log('pathname', pathname);
+   console.log('update code deploy');
 
    // useLayoutEffect(() => {
 
