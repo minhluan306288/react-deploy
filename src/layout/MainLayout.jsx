@@ -12,20 +12,20 @@ export default function MainLayout(){
    console.log('pathname', pathname);
    console.log('update code deploy');
 
-   // useLayoutEffect(() => {
+   useLayoutEffect(() => {
 
-   //    const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
-   //       setIsSignedIn(!!user);
-   //       console.log('user', user);
-   //       console.log('user', await user?.getIdToken());
-   //       if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
-   //     });
-   //     return () => unregisterAuthObserver();
+      const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
+         setIsSignedIn(!!user);
+         console.log('user', user);
+         console.log('user', await user?.getIdToken());
+         // if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
+       });
+       return () => unregisterAuthObserver();
 
-   //    // if(pathname !== '/sign-in' && pathname !== '/sign-up'){
+      // if(pathname !== '/sign-in' && pathname !== '/sign-up'){
          
-   //    // }
-   //  },[pathname]); 
+      // }
+    },[pathname]); 
 
 
 
