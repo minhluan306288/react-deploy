@@ -6,7 +6,7 @@ import { useState } from "react";
 import { registerError } from "../constants/messages";
 import { Link } from 'react-router-dom'
 
-export default function PageSignup() {
+export default function PageSignUp() {
   const [alertSignUp, setAlertSignUp] = useState();
   const onSignUp = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)

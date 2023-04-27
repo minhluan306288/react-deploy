@@ -14,6 +14,7 @@ module.exports = {
          '@Router': path.resolve(__dirname, 'src/router'),
          '@Observer': path.resolve(__dirname, 'src/observer'),
          '@Constants': path.resolve(__dirname, 'src/constants'),
+         '@DataRaw': path.resolve(__dirname, 'src/dataRaw'),
       },
    },
    plugins: [{ 
