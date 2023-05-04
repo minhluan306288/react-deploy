@@ -4,12 +4,18 @@ import Footer from "@Layout/Footer";
 import firebase from 'firebase/compat/app';
 import { useLayoutEffect, useState } from "react";
 import {auth} from '@Observer/ObFirebase';
+import { useDispatch } from "react-redux";
+import { addAuthor } from "reduxSlice/slice";
 
 
 export default function MainLayout(){
    const [isSignedIn, setIsSignedIn] = useState(false) 
    const {pathname} = useResolvedPath()
    const navigate = useNavigate()
+   const dispatch = useDispatch();
+
+
+
    console.log('pathname', pathname);
    console.log('update code deploy');
 
@@ -19,6 +25,9 @@ export default function MainLayout(){
          setIsSignedIn(!!user);
          console.log('user', user);
          console.log('user', await user?.getIdToken());
+         const {accessToken,displayName,email,phoneNumber,photoURL,uid} = user
+         const action = addAuthor({accessToken,displayName,email,phoneNumber,photoURL,uid})
+         dispatch(action)
          // if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
        });
        return () => unregisterAuthObserver();
