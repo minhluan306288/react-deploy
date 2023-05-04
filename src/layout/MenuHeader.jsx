@@ -50,6 +50,7 @@ export default function MenuHeader() {
                 <div className="flex space-x-4">
                   {routes.filter(i => i.isShowMenu).map(i => 
                         <NavLink
+                          exact
                           key={i.path}
                            className={
                             ({ isActive, isPending }) =>

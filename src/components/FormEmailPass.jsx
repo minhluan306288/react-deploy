@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { emailUnvalid } from "@Constants/messages";
 import { regEmail } from "@Constants/regex";
-import { Link } from 'react-router-dom'
 
 function FormEmailPass({onSubmit,type,alertCallBack}) {
    const [email,setEmail] = useState('')

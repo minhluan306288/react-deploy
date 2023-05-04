@@ -1,5 +1,6 @@
 import { Outlet, useNavigate, useResolvedPath } from "react-router-dom";
 import MenuHeader from "@Layout/MenuHeader";
+import Footer from "@Layout/Footer";
 import firebase from 'firebase/compat/app';
 import { useLayoutEffect, useState } from "react";
 import {auth} from '@Observer/ObFirebase';
@@ -40,6 +41,7 @@ export default function MainLayout(){
                <Outlet />
             </div>
          </main>
+         <Footer />
       
       </>
    )
