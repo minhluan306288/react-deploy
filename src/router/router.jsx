@@ -5,6 +5,7 @@ import MainLayout from '@Layout/MainLayout';
 import PageProductDetails from '@Pages/PageProductDetails';
 import PageSignUp from '@Pages/PageSignUp';
 import PageSignIn from '@Pages/PageSignIn';
+import PageDemo from 'pages/PageDemo';
 
 export const routes = [
   { title: 'Home', path: '/', component: PageHome, isShowMenu: true },
@@ -12,6 +13,7 @@ export const routes = [
   { title: 'Details Product', path: '/product/:id', component: PageProductDetails, isShowMenu: false },
   { title: 'Sign Up', path: '/sign-up', component: PageSignUp, isShowMenu: true },
   { title: 'Sign In', path: '/sign-in', component: PageSignIn, isShowMenu: true },
+  { title: 'Page demo', path: '/demo', component: PageDemo, isShowMenu: true },
 ]
 
 const router = createBrowserRouter(createRoutesFromElements(

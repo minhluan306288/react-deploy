@@ -31,13 +31,13 @@ export default function ProductsItem({ item, onDelete, onUpdate }) {
             </span>
           </div>
           <div className="options">
-            <button className="btn delete" onClick={(e) => {
+            <button className="btn btn-primary btn-sm" onClick={(e) => {
                e.preventDefault()
                onDelete(item.id)
                }}>
               Remove
             </button>
-            <button className="btn update" onClick={(e) => {
+            <button className="btn btn-warning btn-sm" onClick={(e) => {
                e.preventDefault()
                onUpdate(item)
                }}>

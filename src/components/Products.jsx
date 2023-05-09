@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductsItem from "@Components/ProductsItem";
-import "../assets/less/products.less";
-import "../assets/less/productsItem.less";
+import "@Assets/less/products.less";
+import "@Assets/less/productsItem.less";
 import Search from "./Search";
 
 function Products({ title, children }) {

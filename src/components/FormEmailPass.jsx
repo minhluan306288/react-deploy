@@ -29,7 +29,7 @@ function FormEmailPass({onSubmit,type,alertCallBack}) {
       <>
          <div className="pb-4">
             <label htmlFor="email" className="text-sm block font-bold ">EMAIL ADDRESS</label>
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300 " placeholder="Johnbull@example.com" />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Your email..." className="input input-bordered input-primary w-full" />
             {valid.email && <span className="text-sm text-red-500 italic">*{valid.email}</span>}
           </div>
           <div className="pb-4">
@@ -37,7 +37,7 @@ function FormEmailPass({onSubmit,type,alertCallBack}) {
                <label htmlFor="password" className="text-sm block font-bold">PASSWORD</label>
                <span>Forgot</span>
             </div>
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="text-sm shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-blue-300" placeholder="Enter your password" />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password..." className="input input-bordered input-primary w-full" />
           </div>
           {alertCallBack &&
             <div className='py-3 px-4 mb-4 rounded text-red-500 bg-red-50'>

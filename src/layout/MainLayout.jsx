@@ -6,6 +6,7 @@ import { useLayoutEffect, useState } from "react";
 import {auth} from '@Observer/ObFirebase';
 import { useDispatch } from "react-redux";
 import { addAuthor } from "reduxSlice/slice";
+import { menuItems } from "@cConstants/menuItems";
 
 
 export default function MainLayout(){
@@ -23,11 +24,13 @@ export default function MainLayout(){
 
       const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
          setIsSignedIn(!!user);
-         console.log('user', user);
-         console.log('user', await user?.getIdToken());
-         const {accessToken,displayName,email,phoneNumber,photoURL,uid} = user
-         const action = addAuthor({accessToken,displayName,email,phoneNumber,photoURL,uid})
-         dispatch(action)
+         if(user){
+            console.log('user', user);
+            console.log('user', await user?.getIdToken());
+            const {accessToken,displayName,email,phoneNumber,photoURL,uid} = user
+            const action = addAuthor({accessToken,displayName,email,phoneNumber,photoURL,uid})
+            dispatch(action)
+         }
          // if(pathname !== '/sign-up' && pathname !== '/sign-in') navigate('/sign-in')
        });
        return () => unregisterAuthObserver();
@@ -35,7 +38,7 @@ export default function MainLayout(){
       // if(pathname !== '/sign-in' && pathname !== '/sign-up'){
          
       // }
-    },[pathname]); 
+    },[]); 
 
 
 
