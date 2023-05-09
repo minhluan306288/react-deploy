@@ -6,7 +6,6 @@ import { useLayoutEffect, useState } from "react";
 import {auth} from '@Observer/ObFirebase';
 import { useDispatch } from "react-redux";
 import { addAuthor } from "reduxSlice/slice";
-import { menuItems } from "@cConstants/menuItems";
 
 
 export default function MainLayout(){
